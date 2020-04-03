@@ -34,7 +34,8 @@ distancing <- get_distancing_data (file_names[1], download_date = download_date)
 
 for ( i in 2:length(file_names)) {
 
-  tmp <- possibly_get_distancing_data (file_names[i], download_date = download_date)
+  tmp <- possibly_get_distancing_data (file_names[i],
+                                       download_date = download_date)
   if(!is.null(tmp)) {
     message ( "Adding ", tmp$country_code[1])
     distancing <- rbind( distancing, tmp)
